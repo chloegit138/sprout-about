@@ -47,6 +47,13 @@ h3 {
 	margin-bottom: 0;
 }
 
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
 .page-title {
 	font-size: 2.5rem;
 	font-weight: 700;
@@ -77,7 +84,7 @@ h3 {
 }
 
 .callout {
-	border-radius: 3px;
+	border-radius: 10px;
 	padding: 1rem;
 }
 
@@ -127,6 +134,11 @@ img {
 
 .collection-content {
 	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
 }
 
 .column-list {
@@ -315,7 +327,9 @@ time {
 }
 
 .icon {
-	display: inline-block;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	max-width: 1.2em;
 	max-height: 1.2em;
 	text-decoration: none;
@@ -325,6 +339,21 @@ time {
 
 img.icon {
 	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
 }
 
 .user-icon {
@@ -430,10 +459,14 @@ code {
 }
 
 blockquote {
-	font-size: 1.25em;
+	font-size: 1em;
 	margin: 1em 0;
 	padding-left: 1em;
 	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
 }
 
 .bookmark {
@@ -488,14 +521,14 @@ blockquote {
 	margin-top: 0.25em;
 }
 
-.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
 .code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
 .serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
 .mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
-.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
-.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
-.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
-.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
 .pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
 .pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
 .pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
@@ -509,155 +542,155 @@ blockquote {
 .pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
 .pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
 .highlight-default {
-	color: rgba(50, 48, 44, 1);
+	color: rgba(44, 44, 43, 1);
 }
 .highlight-gray {
-	color: rgba(115, 114, 110, 1);
-	fill: rgba(115, 114, 110, 1);
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
 }
 .highlight-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
 }
 .highlight-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
 }
 .highlight-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
 }
 .highlight-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
 }
 .highlight-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
 }
 .highlight-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
 }
 .highlight-pink {
 	color: rgba(193, 76, 138, 1);
 	fill: rgba(193, 76, 138, 1);
 }
 .highlight-red {
-	color: rgba(205, 60, 58, 1);
-	fill: rgba(205, 60, 58, 1);
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
 }
 .highlight-default_background {
-	color: rgba(50, 48, 44, 1);
+	color: rgba(44, 44, 43, 1);
 }
 .highlight-gray_background {
-	background: rgba(248, 248, 247, 1);
+	background: rgba(42, 28, 0, 0.07);
 }
 .highlight-brown_background {
-	background: rgba(244, 238, 238, 1);
+	background: rgba(139, 46, 0, 0.086);
 }
 .highlight-orange_background {
-	background: rgba(251, 236, 221, 1);
+	background: rgba(224, 101, 1, 0.129);
 }
 .highlight-yellow_background {
-	background: rgba(251, 243, 219, 1);
+	background: rgba(211, 168, 0, 0.137);
 }
 .highlight-teal_background {
-	background: rgba(237, 243, 236, 1);
+	background: rgba(0, 100, 45, 0.09);
 }
 .highlight-blue_background {
-	background: rgba(231, 243, 248, 1);
+	background: rgba(0, 124, 215, 0.094);
 }
 .highlight-purple_background {
-	background: rgba(248, 243, 252, 1);
+	background: rgba(102, 0, 178, 0.078);
 }
 .highlight-pink_background {
-	background: rgba(252, 241, 246, 1);
+	background: rgba(197, 0, 93, 0.086);
 }
 .highlight-red_background {
-	background: rgba(253, 235, 236, 1);
+	background: rgba(223, 22, 0, 0.094);
 }
 .block-color-default {
 	color: inherit;
 	fill: inherit;
 }
 .block-color-gray {
-	color: rgba(115, 114, 110, 1);
-	fill: rgba(115, 114, 110, 1);
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
 }
 .block-color-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
 }
 .block-color-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
 }
 .block-color-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
 }
 .block-color-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
 }
 .block-color-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
 }
 .block-color-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
 }
 .block-color-pink {
 	color: rgba(193, 76, 138, 1);
 	fill: rgba(193, 76, 138, 1);
 }
 .block-color-red {
-	color: rgba(205, 60, 58, 1);
-	fill: rgba(205, 60, 58, 1);
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
 }
 .block-color-default_background {
 	color: inherit;
 	fill: inherit;
 }
 .block-color-gray_background {
-	background: rgba(248, 248, 247, 1);
+	background: rgba(240, 239, 237, 1);
 }
 .block-color-brown_background {
-	background: rgba(244, 238, 238, 1);
+	background: rgba(245, 237, 233, 1);
 }
 .block-color-orange_background {
-	background: rgba(251, 236, 221, 1);
+	background: rgba(251, 235, 222, 1);
 }
 .block-color-yellow_background {
-	background: rgba(251, 243, 219, 1);
+	background: rgba(249, 243, 220, 1);
 }
 .block-color-teal_background {
-	background: rgba(237, 243, 236, 1);
+	background: rgba(232, 241, 236, 1);
 }
 .block-color-blue_background {
-	background: rgba(231, 243, 248, 1);
+	background: rgba(229, 242, 252, 1);
 }
 .block-color-purple_background {
-	background: rgba(248, 243, 252, 1);
+	background: rgba(243, 235, 249, 1);
 }
 .block-color-pink_background {
-	background: rgba(252, 241, 246, 1);
+	background: rgba(250, 233, 241, 1);
 }
 .block-color-red_background {
-	background: rgba(253, 235, 236, 1);
+	background: rgba(252, 233, 231, 1);
 }
-.select-value-color-default { background-color: rgba(84, 72, 49, 0.08); }
-.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
-.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
-.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
-.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
-.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
-.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
-.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
-.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
-.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
 
 .checkbox {
 	display: inline-flex;
@@ -677,9 +710,9 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="23bbe443-d7b1-80c6-bf16-e82c9ef55578" class="page sans"><header><h1 class="page-title">Sprout Privacy Policy</h1><p class="page-description"></p></header><div class="page-body"><p id="23bbe443-d7b1-8012-b719-c32834160403" class="">Last updated Jul 25, 2025. We will notify you on our services if anything gets changed, so you can review this privacy policy again.</p><h2 id="23bbe443-d7b1-8083-ad39-d7d046d63c4d" class="">Definitions</h2><p id="23bbe443-d7b1-8023-ac4b-e0c59fea9285" class="">For the purposes of this Privacy Policy:</p><ul id="23bbe443-d7b1-8061-a13a-c877a9546100" class="bulleted-list"><li style="list-style-type:disc"><strong>Sprout</strong> refers to the social media website available at noplace.live, which provides the Service described below.</li></ul><ul id="23bbe443-d7b1-80bd-a466-e56529787b0d" class="bulleted-list"><li style="list-style-type:disc"><strong>Account </strong>or <strong>Profile</strong> refers to a unique account created on our Service.</li></ul><ul id="23bbe443-d7b1-800e-9a59-d17ce89ac805" class="bulleted-list"><li style="list-style-type:disc"><strong>Service </strong>refers to any websites or applications being offered by Sprout.</li></ul><ul id="23bbe443-d7b1-80bc-8449-c77b81b43e79" class="bulleted-list"><li style="list-style-type:disc"><strong>Device </strong>refers to any device that can access the Service, like a computer or mobile device.</li></ul><ul id="23bbe443-d7b1-8032-9fb9-e9d77f581910" class="bulleted-list"><li style="list-style-type:disc"><strong>Post</strong> refers to any content that can be posted publicly on our Service. This can be text, images, or links.</li></ul><ul id="23bbe443-d7b1-80c0-949d-e9c76116c057" class="bulleted-list"><li style="list-style-type:disc"><strong>User </strong>refers to anyone who accesses our Services.</li></ul><p id="23bbe443-d7b1-8048-9a21-f89659dcf1be" class="">
-</p><hr id="23bbe443-d7b1-8095-aad5-fc9d06e2120c"/><h1 id="23bbe443-d7b1-8077-8f9d-c1b3f802c921" class="">Information Sprout collects</h1><p id="23bbe443-d7b1-80f3-ba0a-dcbfee38fc72" class="">Information is collected in 3 different ways when you use Sprout. We will go into more detail about how that data is collected and where it is used below.</p><h2 id="23bbe443-d7b1-8097-b7f5-e9692e001830" class="">Information you provide</h2><ul id="23bbe443-d7b1-80b6-bc8a-cde46751be15" class="bulleted-list"><li style="list-style-type:disc"><strong>Profiles</strong>: Sprout requires an account to access its services. To create an account, you need to provide us with certain information. As such, some information is required to have an account on Sprout. If you create an account, you must provide some information so that we can provide our services to you. The only required information we save about you during account creation is a username and an email or phone number. Your profile information, like your username and other information that you choose to add to your profile (such as a biography, your birth date, or location), are publicly available to anyone who has an account on Sprout.</li></ul><ul id="23bbe443-d7b1-8085-8a4c-ccf101e39ac1" class="bulleted-list"><li style="list-style-type:disc"><strong>Payment Information: </strong>Sprout allows you to purchase cosmetics for your profile. When you purchase these cosmetics, your payment information is processed securely by our payment provider, Stripe. We do not store your full credit card details (like your CVV), but we may store limited billing information (such as billing address) necessary for tax or verification purposes.</li></ul><ul id="23bbe443-d7b1-80ab-b3b2-c4a054013209" class="bulleted-list"><li style="list-style-type:disc"><strong>Settings</strong>: You can adjust how Sprout works in your settings. When you adjust certain fields, this information will be stored by Sprout so we can respect your settings.</li></ul><h2 id="23bbe443-d7b1-802b-b2f6-ee42c27b300b" class="">Information we collect</h2><p id="23bbe443-d7b1-804c-988b-ecb9b8bcd375" class="">When you use our services, we collect information about how you use them. We use that information to provide you with our services, and to keep Sprout safe for everyone.</p><p id="23bbe443-d7b1-801b-92c8-f56836e56c73" class=""><strong>Your Usage</strong>. We collect information about what you do on Sprout, which includes:</p><ul id="23bbe443-d7b1-80f2-84ce-fc89d3a5328e" class="bulleted-list"><li style="list-style-type:disc">Posts on our service (including the message, date created, and the profile it was posted on).</li></ul><ul id="23bbe443-d7b1-807b-b88f-d374eeafe220" class="bulleted-list"><li style="list-style-type:disc">Your interactions with other users’ content, such as quotes, boosts, replies, content you’re tagged in, and content you tag others in.</li></ul><ul id="23bbe443-d7b1-8042-af69-cf3d5eab2368" class="bulleted-list"><li style="list-style-type:disc">How you interact with other users on our services, like the people you have as friends, information about your messages, including the contents of the messages, who received it, and the date and time the messages were sent.</li></ul><ul id="23bbe443-d7b1-80f7-9591-e83ae049be49" class="bulleted-list"><li style="list-style-type:disc">If you communicate with us, like through email, reports, or feedback, we will collect information about who sent it and the content.</li></ul><p id="23bbe443-d7b1-803f-8f3f-fc3939d0ee0b" class=""><strong>Device Information.</strong> We collect information about the devices you use to access our services, which includes:</p><ul id="23bbe443-d7b1-80e2-83d1-d7da7202da81" class="bulleted-list"><li style="list-style-type:disc">Information about your connection, like your IP address.</li></ul><h2 id="23bbe443-d7b1-8036-b158-edf7a9b0b229" class="">Cookie Usage</h2><p id="23bbe443-d7b1-80fa-b15d-c70d79d0e26e" class="">We use essential cookies to maintain your session when you’re logged in. We may also use cookies to remember preferences.</p><h2 id="23bbe443-d7b1-8097-bdec-c65b9842b413" class="">Analytics</h2><p id="23bbe443-d7b1-80fb-9bcc-d3272519294d" class="">We use Google Analytics on our web application to understand how users interact with Sprout. This allows us to improve upon our features and performance. Google Analytics may collect additional information, such as pages visited, device/browser type, time spent accessing our services, and other usage information. This date is not associated with you personally. You can learn more and opt out through <a href="https://tools.google.com/dlpage/gaoptout">Google’s privacy controls</a>.</p><h2 id="23bbe443-d7b1-804b-8db1-dce88b4d0d19" class="">Data Retention</h2><p id="23bbe443-d7b1-8042-8b17-db4a59d15a9a" class="">We retain your information for as long as your account is active on our services. If you choose to delete your account, we will remove your data within a week, unless we are required to retain it for legal purposes.</p><p id="23bbe443-d7b1-800d-8cb6-ee89528266bd" class="">
-</p><hr id="23bbe443-d7b1-80db-8b11-cdae3de9cec4"/><h1 id="23bbe443-d7b1-802b-9eae-f9af8b02f84e" class="">How your data is used</h1><p id="23bbe443-d7b1-8098-b281-d54429d63c7c" class="">We use the information collected to operate Sprout services.</p><ul id="23bbe443-d7b1-80e3-94e4-c283fcc699a0" class="bulleted-list"><li style="list-style-type:disc"><strong>To contact you</strong>: We may use information you provide us, such as an email address or phone number, to interact with you directly. For example, we may contact you about a moderation action against your account or other suspicious activity.</li></ul><ul id="23bbe443-d7b1-804d-834f-e19c2d88aee5" class="bulleted-list"><li style="list-style-type:disc"><strong>To protect our users</strong>: We are committed to keeping Sprout a safe environment for everyone. To help with that:<ul id="23bbe443-d7b1-801e-bf46-dea7732f34ad" class="bulleted-list"><li style="list-style-type:circle"><strong>Reporting</strong>: Users can report posts, messages, or profiles that they believe violate our guidelines or put others at risk. When a report is filed, our moderation team may review any relevant content and account information (such as posts, messages, and interactions) to determine if the reported content is safe for Sprout.</li></ul><ul id="23bbe443-d7b1-8057-a3a4-fdd11a09488b" class="bulleted-list"><li style="list-style-type:circle"><strong>Moderator Access</strong>: Moderators have access to information necessary to investigate reports and enforce our rules. This may include viewing the content of private messages if they are part of a reported incident.</li></ul><ul id="23bbe443-d7b1-804b-a84d-f88d1eda182d" class="bulleted-list"><li style="list-style-type:circle"><strong>Content Analysis</strong>: We use the <a href="https://perspectiveapi.com/">Perspective API</a> to evaluate posts for toxicity, harassment, and other inappropriate behavior. This is used to ensure safety on the platform.</li></ul></li></ul><p id="23bbe443-d7b1-800d-9713-caafbb0afe30" class="">
-</p><hr id="23bbe443-d7b1-807e-b640-ca7ee76ce1b5"/><h1 id="23bbe443-d7b1-8046-9784-d80f03a9257d" class="">Exporting or deleting your information</h1><p id="23bbe443-d7b1-80e0-9ce7-c2e44c895fc3" class="">You can export a copy of the data that Sprout has saved about you, or choose to delete it.</p><ul id="23bbe443-d7b1-80b4-94ac-e0ee2ea7b293" class="bulleted-list"><li style="list-style-type:disc"><strong>Export your information: </strong>You can export a copy of your data on the settings pages of our services. This includes any information provided or collected about you up to the date the data was requested.</li></ul><ul id="23bbe443-d7b1-8052-afeb-cd86bd8a7065" class="bulleted-list"><li style="list-style-type:disc"><strong>Delete your information</strong>: You can request the deletion of any data associated with you on Sprout in the settings pages of our services.</li></ul><h2 id="23bbe443-d7b1-80d7-a24f-c17881d43e1b" class="">U.S Law requirements</h2><p id="23bbe443-d7b1-80f1-8944-ec752c5885df" class="">Certain U.S. state privacy laws give you rights such as:</p><ul id="23bbe443-d7b1-803e-a407-fec1d182775d" class="bulleted-list"><li style="list-style-type:disc">Knowing what personal information we collect.</li></ul><ul id="23bbe443-d7b1-808b-8b31-ce2f811aeb53" class="bulleted-list"><li style="list-style-type:disc">Requesting access to, correction of, or deletion of your personal data.</li></ul><p id="23bbe443-d7b1-8067-bab1-ebeca9e60f14" class="">These may include rights under the California Consumer Privacy Act and similar laws in other states. You can exercise these rights using the export and deletion tools described above.</p><p id="23bbe443-d7b1-806e-a2e7-e5bb8973dae5" class="">
-</p><hr id="23bbe443-d7b1-80ef-9ebf-dc05ed2d3b41"/><h1 id="23bbe443-d7b1-8019-8ae8-ef256e2e0692" class="">Children’s Privacy</h1><p id="23bbe443-d7b1-80d1-a7e5-ed895f8170b4" class="">Sprout is not intended for children under the age of 13, and we do not knowingly collect personal data from children under 13. If you suspect a user to be under that age threshold, then you may report them and their information will be deleted as soon as the report is reviewed.</p><p id="24cbe443-d7b1-80b4-bf91-fc390c0ac9e5" class="">
-</p><p id="24cbe443-d7b1-808d-ba15-c068738352ea" class="">If you have any further questions, please feel free to email us at help@sprout.spot</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
+</style></head><body><article id="23bbe443-d7b1-80c6-bf16-e82c9ef55578" class="page sans"><header><h1 class="page-title" dir="auto">Sprout Privacy Policy</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><p id="23bbe443-d7b1-8012-b719-c32834160403" class="">Last updated Jul 25, 2025. We will notify you on our services if anything gets changed, so you can review this privacy policy again.</p></div><div style="display:contents" dir="auto"><h2 id="23bbe443-d7b1-8083-ad39-d7d046d63c4d" class="">Definitions</h2></div><div style="display:contents" dir="auto"><p id="23bbe443-d7b1-8023-ac4b-e0c59fea9285" class="">For the purposes of this Privacy Policy:</p></div><div style="display:contents" dir="auto"><ul id="23bbe443-d7b1-8061-a13a-c877a9546100" class="bulleted-list"><li style="list-style-type:disc"><strong>Sprout</strong> refers to the social media website available at noplace.live, which provides the Service described below.</li></ul></div><div style="display:contents" dir="auto"><ul id="23bbe443-d7b1-80bd-a466-e56529787b0d" class="bulleted-list"><li style="list-style-type:disc"><strong>Account </strong>or <strong>Profile</strong> refers to a unique account created on our Service.</li></ul></div><div style="display:contents" dir="auto"><ul id="23bbe443-d7b1-800e-9a59-d17ce89ac805" class="bulleted-list"><li style="list-style-type:disc"><strong>Service </strong>refers to any websites or applications being offered by Sprout.</li></ul></div><div style="display:contents" dir="auto"><ul id="23bbe443-d7b1-80bc-8449-c77b81b43e79" class="bulleted-list"><li style="list-style-type:disc"><strong>Device </strong>refers to any device that can access the Service, like a computer or mobile device.</li></ul></div><div style="display:contents" dir="auto"><ul id="23bbe443-d7b1-8032-9fb9-e9d77f581910" class="bulleted-list"><li style="list-style-type:disc"><strong>Post</strong> refers to any content that can be posted publicly on our Service. This can be text, images, or links.</li></ul></div><div style="display:contents" dir="auto"><ul id="23bbe443-d7b1-80c0-949d-e9c76116c057" class="bulleted-list"><li style="list-style-type:disc"><strong>User </strong>refers to anyone who accesses our Services.</li></ul></div><div style="display:contents" dir="auto"><p id="23bbe443-d7b1-8048-9a21-f89659dcf1be" class="">
+</p></div><div style="display:contents" dir="auto"><hr id="23bbe443-d7b1-8095-aad5-fc9d06e2120c"/></div><div style="display:contents" dir="auto"><h1 id="23bbe443-d7b1-8077-8f9d-c1b3f802c921" class="">Information Sprout collects</h1></div><div style="display:contents" dir="auto"><p id="23bbe443-d7b1-80f3-ba0a-dcbfee38fc72" class="">Information is collected in 3 different ways when you use Sprout. We will go into more detail about how that data is collected and where it is used below.</p></div><div style="display:contents" dir="auto"><h2 id="23bbe443-d7b1-8097-b7f5-e9692e001830" class="">Information you provide</h2></div><div style="display:contents" dir="auto"><ul id="23bbe443-d7b1-80b6-bc8a-cde46751be15" class="bulleted-list"><li style="list-style-type:disc"><strong>Profiles</strong>: Sprout requires an account to access its services. To create an account, you need to provide us with certain information. As such, some information is required to have an account on Sprout. If you create an account, you must provide some information so that we can provide our services to you. The only required information we save about you during account creation is a username and an email or phone number. Your profile information, like your username and other information that you choose to add to your profile (such as a biography, your birth date, or location), are publicly available to anyone who has an account on Sprout.</li></ul></div><div style="display:contents" dir="auto"><ul id="23bbe443-d7b1-8085-8a4c-ccf101e39ac1" class="bulleted-list"><li style="list-style-type:disc"><strong>Payment Information: </strong>Sprout allows you to purchase cosmetics for your profile. When you purchase these cosmetics, your payment information is processed securely by our payment provider, Stripe. We do not store your full credit card details (like your CVV), but we may store limited billing information (such as billing address) necessary for tax or verification purposes.</li></ul></div><div style="display:contents" dir="auto"><ul id="23bbe443-d7b1-80ab-b3b2-c4a054013209" class="bulleted-list"><li style="list-style-type:disc"><strong>Settings</strong>: You can adjust how Sprout works in your settings. When you adjust certain fields, this information will be stored by Sprout so we can respect your settings.</li></ul></div><div style="display:contents" dir="auto"><h2 id="23bbe443-d7b1-802b-b2f6-ee42c27b300b" class="">Information we collect</h2></div><div style="display:contents" dir="auto"><p id="23bbe443-d7b1-804c-988b-ecb9b8bcd375" class="">When you use our services, we collect information about how you use them. We use that information to provide you with our services, and to keep Sprout safe for everyone.</p></div><div style="display:contents" dir="auto"><p id="23bbe443-d7b1-801b-92c8-f56836e56c73" class=""><strong>Your Usage</strong>. We collect information about what you do on Sprout, which includes:</p></div><div style="display:contents" dir="auto"><ul id="23bbe443-d7b1-80f2-84ce-fc89d3a5328e" class="bulleted-list"><li style="list-style-type:disc">Posts on our service (including the message, date created, and the profile it was posted on).</li></ul></div><div style="display:contents" dir="auto"><ul id="23bbe443-d7b1-807b-b88f-d374eeafe220" class="bulleted-list"><li style="list-style-type:disc">Your interactions with other users’ content, such as quotes, boosts, replies, content you’re tagged in, and content you tag others in.</li></ul></div><div style="display:contents" dir="auto"><ul id="23bbe443-d7b1-8042-af69-cf3d5eab2368" class="bulleted-list"><li style="list-style-type:disc">How you interact with other users on our services, like the people you have as friends, information about your messages, including the contents of the messages, who received it, and the date and time the messages were sent.</li></ul></div><div style="display:contents" dir="auto"><ul id="23bbe443-d7b1-80f7-9591-e83ae049be49" class="bulleted-list"><li style="list-style-type:disc">If you communicate with us, like through email, reports, or feedback, we will collect information about who sent it and the content.</li></ul></div><div style="display:contents" dir="auto"><p id="23bbe443-d7b1-803f-8f3f-fc3939d0ee0b" class=""><strong>Device Information.</strong> We collect information about the devices you use to access our services, which includes:</p></div><div style="display:contents" dir="auto"><ul id="23bbe443-d7b1-80e2-83d1-d7da7202da81" class="bulleted-list"><li style="list-style-type:disc">Information about your connection, like your IP address.</li></ul></div><div style="display:contents" dir="auto"><h2 id="23bbe443-d7b1-8036-b158-edf7a9b0b229" class="">Cookie Usage</h2></div><div style="display:contents" dir="auto"><p id="23bbe443-d7b1-80fa-b15d-c70d79d0e26e" class="">We use essential cookies to maintain your session when you’re logged in. We may also use cookies to remember preferences.</p></div><div style="display:contents" dir="auto"><h2 id="23bbe443-d7b1-8097-bdec-c65b9842b413" class="">Analytics</h2></div><div style="display:contents" dir="auto"><p id="23bbe443-d7b1-80fb-9bcc-d3272519294d" class="">We use Google Analytics on our web application to understand how users interact with Sprout. This allows us to improve upon our features and performance. Google Analytics may collect additional information, such as pages visited, device/browser type, time spent accessing our services, and other usage information. This date is not associated with you personally. You can learn more and opt out through <a href="https://tools.google.com/dlpage/gaoptout">Google’s privacy controls</a>.</p></div><div style="display:contents" dir="auto"><h2 id="23bbe443-d7b1-804b-8db1-dce88b4d0d19" class="">Data Retention</h2></div><div style="display:contents" dir="auto"><p id="23bbe443-d7b1-8042-8b17-db4a59d15a9a" class="">We retain your information for as long as your account is active on our services. If you choose to delete your account, we will remove your data within a week, unless we are required to retain it for legal purposes.</p></div><div style="display:contents" dir="auto"><p id="23bbe443-d7b1-800d-8cb6-ee89528266bd" class="">
+</p></div><div style="display:contents" dir="auto"><hr id="23bbe443-d7b1-80db-8b11-cdae3de9cec4"/></div><div style="display:contents" dir="auto"><h1 id="23bbe443-d7b1-802b-9eae-f9af8b02f84e" class="">How your data is used</h1></div><div style="display:contents" dir="auto"><p id="23bbe443-d7b1-8098-b281-d54429d63c7c" class="">We use the information collected to operate Sprout services.</p></div><div style="display:contents" dir="auto"><ul id="23bbe443-d7b1-80e3-94e4-c283fcc699a0" class="bulleted-list"><li style="list-style-type:disc"><strong>To contact you</strong>: We may use information you provide us, such as an email address or phone number, to interact with you directly. For example, we may contact you about a moderation action against your account or other suspicious activity.</li></ul></div><div style="display:contents" dir="auto"><ul id="23bbe443-d7b1-804d-834f-e19c2d88aee5" class="bulleted-list"><li style="list-style-type:disc"><strong>To protect our users</strong>: We are committed to keeping Sprout a safe environment for everyone. To help with that:<div style="display:contents" dir="auto"><ul id="23bbe443-d7b1-801e-bf46-dea7732f34ad" class="bulleted-list"><li style="list-style-type:circle"><strong>Reporting</strong>: Users can report posts, messages, or profiles that they believe violate our guidelines or put others at risk. When a report is filed, our moderation team may review any relevant content and account information (such as posts, messages, and interactions) to determine if the reported content is safe for Sprout.</li></ul></div><div style="display:contents" dir="auto"><ul id="23bbe443-d7b1-8057-a3a4-fdd11a09488b" class="bulleted-list"><li style="list-style-type:circle"><strong>Moderator Access</strong>: Moderators have access to information necessary to investigate reports and enforce our rules. This may include viewing the content of private messages if they are part of a reported incident.</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><p id="23bbe443-d7b1-800d-9713-caafbb0afe30" class="">
+</p></div><div style="display:contents" dir="auto"><hr id="23bbe443-d7b1-807e-b640-ca7ee76ce1b5"/></div><div style="display:contents" dir="auto"><h1 id="23bbe443-d7b1-8046-9784-d80f03a9257d" class="">Exporting or deleting your information</h1></div><div style="display:contents" dir="auto"><p id="23bbe443-d7b1-80e0-9ce7-c2e44c895fc3" class="">You can export a copy of the data that Sprout has saved about you, or choose to delete it.</p></div><div style="display:contents" dir="auto"><ul id="23bbe443-d7b1-80b4-94ac-e0ee2ea7b293" class="bulleted-list"><li style="list-style-type:disc"><strong>Export your information: </strong>You can export a copy of your data on the settings pages of our services. This includes any information provided or collected about you up to the date the data was requested.</li></ul></div><div style="display:contents" dir="auto"><ul id="23bbe443-d7b1-8052-afeb-cd86bd8a7065" class="bulleted-list"><li style="list-style-type:disc"><strong>Delete your information</strong>: You can request the deletion of any data associated with you on Sprout in the settings pages of our services.</li></ul></div><div style="display:contents" dir="auto"><h2 id="23bbe443-d7b1-80d7-a24f-c17881d43e1b" class="">U.S Law requirements</h2></div><div style="display:contents" dir="auto"><p id="23bbe443-d7b1-80f1-8944-ec752c5885df" class="">Certain U.S. state privacy laws give you rights such as:</p></div><div style="display:contents" dir="auto"><ul id="23bbe443-d7b1-803e-a407-fec1d182775d" class="bulleted-list"><li style="list-style-type:disc">Knowing what personal information we collect.</li></ul></div><div style="display:contents" dir="auto"><ul id="23bbe443-d7b1-808b-8b31-ce2f811aeb53" class="bulleted-list"><li style="list-style-type:disc">Requesting access to, correction of, or deletion of your personal data.</li></ul></div><div style="display:contents" dir="auto"><p id="23bbe443-d7b1-8067-bab1-ebeca9e60f14" class="">These may include rights under the California Consumer Privacy Act and similar laws in other states. You can exercise these rights using the export and deletion tools described above.</p></div><div style="display:contents" dir="auto"><p id="23bbe443-d7b1-806e-a2e7-e5bb8973dae5" class="">
+</p></div><div style="display:contents" dir="auto"><hr id="23bbe443-d7b1-80ef-9ebf-dc05ed2d3b41"/></div><div style="display:contents" dir="auto"><h1 id="23bbe443-d7b1-8019-8ae8-ef256e2e0692" class="">Children’s Privacy</h1></div><div style="display:contents" dir="auto"><p id="23bbe443-d7b1-80d1-a7e5-ed895f8170b4" class="">Sprout is not intended for children under the age of 13, and we do not knowingly collect personal data from children under 13. If you suspect a user to be under that age threshold, then you may report them and their information will be deleted as soon as the report is reviewed.</p></div><div style="display:contents" dir="auto"><p id="24cbe443-d7b1-80b4-bf91-fc390c0ac9e5" class="">
+</p></div><div style="display:contents" dir="auto"><p id="24cbe443-d7b1-808d-ba15-c068738352ea" class="">If you have any further questions, please feel free to email us at help@sprout.spot</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
