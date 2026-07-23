@@ -1,3 +1,3 @@
-rules=41126
-privacy=6
-terms=3
+rules=1.0.0
+privacy=7.0.0
+terms=3.0.0
