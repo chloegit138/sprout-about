@@ -88,7 +88,14 @@ h3 {
 	padding: 1rem;
 }
 
-figure {
+/* For default-background callouts, render the border outline. */
+.callout.block-color-default_background {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+figure,
+aside,
+details {
 	margin: 1.25em 0;
 	page-break-inside: avoid;
 }
@@ -184,7 +191,8 @@ img {
 	display: block;
 	font-size: 0.875rem;
 	line-height: 1.3;
-	padding: 0.125rem;
+	padding-inline: 0.125rem;
+	padding-block: 0.375rem;
 }
 
 .table_of_contents-indent-1 {
@@ -209,10 +217,10 @@ table,
 th,
 td {
 	border: 1px solid rgba(55, 53, 47, 0.09);
-	border-collapse: collapse;
 }
 
 table {
+	border-collapse: collapse;
 	border-left: none;
 	border-right: none;
 }
@@ -367,6 +375,17 @@ time {
 	margin-right: 0.5em;
 }
 
+/*
+ * Render emoji icons using a ::before pseudo-element to keep the glyph
+ * out of the DOM textContent traversal. This avoids double-rendering icons
+ * in callouts and page titles.
+ * NOTE(slim/html-export-pseudo-icons): I can't tagref this because it will
+ * flag as a duplicate tag after codegen.
+ */
+.icon[data-emoji]::before {
+	content: attr(data-emoji);
+}
+
 img.icon {
 	border-radius: 3px;
 }
@@ -440,8 +459,7 @@ td > time {
 }
 
 input[type="checkbox"] {
-	transform: scale(1.5);
-	margin-right: 0.6em;
+	margin-right: 0.4em;
 	vertical-align: middle;
 }
 
@@ -549,6 +567,12 @@ blockquote.quote-large {
 .bookmark-href {
 	font-size: 0.75em;
 	margin-top: 0.25em;
+}
+
+.tab {
+	margin: 1.25em 0;
+	padding-inline: 1rem;
+	border: 1px solid rgba(55, 53, 47, 0.09);
 }
 
 .sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
@@ -740,6 +764,6 @@ blockquote.quote-large {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="23bbe443-d7b1-8017-bfa4-cad65a0bc6c5" class="page sans"><header><h1 class="page-title" dir="auto">Sprout Community Rules</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><p id="23bbe443-d7b1-80b9-9ebc-d8226a7c0d9b" class="">Last updated Apr 11, 2026</p></div><div style="display:contents" dir="auto"><ul id="338be443-d7b1-80df-a72b-d3facc1cfbf6" class="bulleted-list"><li style="list-style-type:disc">No zionism.</li></ul></div><div style="display:contents" dir="auto"><ul id="23bbe443-d7b1-8025-953e-dbccb7b1cf8f" class="bulleted-list"><li style="list-style-type:disc">No sexually explicit images. </li></ul></div><div style="display:contents" dir="auto"><ul id="340be443-d7b1-8045-831d-ded197e8c8f0" class="bulleted-list"><li style="list-style-type:disc">Sexual text is reviewed on a case-by-case basis, but try not to do it around minors.</li></ul></div><div style="display:contents" dir="auto"><ul id="30ebe443-d7b1-8000-a50f-d04d9efb8ca2" class="bulleted-list"><li style="list-style-type:disc">No hate speech/images.</li></ul></div><div style="display:contents" dir="auto"><ul id="338be443-d7b1-8083-8d9c-d53fe551148d" class="bulleted-list"><li style="list-style-type:disc">No shotacon/lolicon content.</li></ul></div><div style="display:contents" dir="auto"><ul id="30ebe443-d7b1-806f-b59a-ee13e3232465" class="bulleted-list"><li style="list-style-type:disc">Don’t encourage violence, threaten people, or harass people.</li></ul></div><div style="display:contents" dir="auto"><ul id="30ebe443-d7b1-804c-8852-cda677d035e0" class="bulleted-list"><li style="list-style-type:disc">No spam posting.</li></ul></div><div style="display:contents" dir="auto"><ul id="30ebe443-d7b1-80dc-a954-dcd0dee81078" class="bulleted-list"><li style="list-style-type:disc">No AI images/text.</li></ul></div><div style="display:contents" dir="auto"><ul id="32bbe443-d7b1-80de-b355-d8780f83b3e4" class="bulleted-list"><li style="list-style-type:disc">No stirring up drama. If you are intentionally making people mad because it is funny, your content will be hidden.</li></ul></div><div style="display:contents" dir="auto"><p id="23bbe443-d7b1-8093-8c44-cd7259154aed" class="">
-</p></div><div style="display:contents" dir="auto"><p id="23bbe443-d7b1-80bf-aecd-df033acd92da" class="">We reserve the right to ban you or delete your account for the reasons listed here, or in other special scenarios.</p></div><div style="display:contents" dir="auto"><p id="23cbe443-d7b1-80c9-88bc-f6f13ba63e19" class="">
-</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
+</style><style>@import url('https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex-swap.min.css')</style></head><body><article id="23bbe443-d7b1-8017-bfa4-cad65a0bc6c5" class="page sans"><header><h1 class="page-title" dir="auto">Sprout Community Rules</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><p id="23bbe443-d7b1-80b9-9ebc-d8226a7c0d9b" class="" dir="auto">Last updated Jul 23, 2026</p><ul id="3a6be443-d7b1-80fa-b8f2-c0648f7f61b8" class="bulleted-list" dir="auto"><li style="list-style-type:disc">You must be 13 or over.</li></ul><ul id="3a6be443-d7b1-804c-902d-d8cdf6da95b1" class="bulleted-list" dir="auto"><li style="list-style-type:disc">No AI images/text.</li></ul><ul id="338be443-d7b1-80df-a72b-d3facc1cfbf6" class="bulleted-list" dir="auto"><li style="list-style-type:disc">No zionism.</li></ul><ul id="23bbe443-d7b1-8025-953e-dbccb7b1cf8f" class="bulleted-list" dir="auto"><li style="list-style-type:disc">No sexually explicit images. </li></ul><ul id="340be443-d7b1-8045-831d-ded197e8c8f0" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Sexual text is reviewed on a case-by-case basis, but don’t do it around minors.</li></ul><ul id="3a6be443-d7b1-80a8-beec-ebd01545fe0a" class="bulleted-list" dir="auto"><li style="list-style-type:disc">No shotacon/lolicon content.</li></ul><ul id="30ebe443-d7b1-8000-a50f-d04d9efb8ca2" class="bulleted-list" dir="auto"><li style="list-style-type:disc">No hate speech/images.</li></ul><ul id="30ebe443-d7b1-806f-b59a-ee13e3232465" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Don’t encourage violence, threaten people, or harass people.</li></ul><ul id="30ebe443-d7b1-804c-8852-cda677d035e0" class="bulleted-list" dir="auto"><li style="list-style-type:disc">No spam posting.</li></ul><ul id="32bbe443-d7b1-80de-b355-d8780f83b3e4" class="bulleted-list" dir="auto"><li style="list-style-type:disc">No stirring up drama. If you are intentionally making people mad because it is funny, your content will be hidden.</li></ul><p id="23bbe443-d7b1-8093-8c44-cd7259154aed" class="" dir="auto">
+</p><p id="23bbe443-d7b1-80bf-aecd-df033acd92da" class="" dir="auto">We reserve the right to ban you or delete your account for the reasons listed here, or in other special scenarios.</p><p id="23cbe443-d7b1-80c9-88bc-f6f13ba63e19" class="" dir="auto">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
