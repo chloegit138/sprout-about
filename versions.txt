@@ -1,4 +1,4 @@
 rules=10
-privacy=8.1
+privacy=9.calls
 terms=3.0.2
 csae=1
